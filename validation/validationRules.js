@@ -7,17 +7,21 @@ const {
   nameMovieSchema,
   linkSchema,
   numberMovieSchema,
+  descriptionSchema,
+  countryMovieSchema,
+  directorMovieSchema,
+  yearMovieSchema,
 } = require("./joiSchemas");
 // eslint-disable-next-line import/order
 const { ObjectId } = require("mongoose").Types;
 
 const createMovieValidator = celebrate({
   body: Joi.object().keys({
-    country: nameSchema,
-    director: nameSchema,
-    duration: nameSchema,
-    year: numberMovieSchema,
-    description: nameSchema,
+    country: countryMovieSchema,
+    director: directorMovieSchema,
+    duration: numberMovieSchema,
+    year: yearMovieSchema,
+    description: descriptionSchema,
     image: linkSchema,
     trailerLink: linkSchema,
     thumbnail: linkSchema,
