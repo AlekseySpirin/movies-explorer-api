@@ -19,8 +19,8 @@ const { PORT = 3000, DB_URL = "mongodb://127.0.0.1:27017/bitfilmsdb" } =
 const allowedCors = [
   "https://praktikum.tk",
   "http://praktikum.tk",
-  "http://mesto-spirin.nomoredomains.work",
-  "https://mesto-spirin.nomoredomains.work",
+  "http://best-movies-explorer.nomoredomainsicu.ru",
+  "https://best-movies-explorer.nomoredomainsicu.ru",
   "http://localhost:3000",
   "localhost:3000",
 ];
