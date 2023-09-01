@@ -24,7 +24,7 @@ const login = (req, res, next) => {
         }
         const token = generateToken(user._id);
         res.cookie("jwt", token, {
-          maxAge: 604800,
+          maxAge: 6048000,
           httpOnly: true,
           sameSite: "none",
           secure: true,

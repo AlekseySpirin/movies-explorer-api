@@ -11,16 +11,12 @@ const directorMovieSchema = Joi.string().required();
 const yearMovieSchema = Joi.string().required();
 const descriptionSchema = Joi.string().required();
 
-
-
 const numberMovieSchema = Joi.number().required();
-
 
 const linkSchema = Joi.string()
   .uri({ scheme: ["http", "https"] })
   .regex(regexLink)
   .required();
-
 
 module.exports = {
   nameSchema,

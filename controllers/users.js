@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const ConflictError = require("../errors/сonflictError");
 
 const getCurrentUser = (req, res, next) => {
   const { _id } = req.user._id;
@@ -13,6 +14,9 @@ const getCurrentUser = (req, res, next) => {
 const updateUserById = (req, res, next) => {
   const newUserData = req.body;
   const { _id } = req.user;
+  if (newUserData.email && newUserData.email !== req.user.email) {
+    throw new ConflictError("Пользователь уже существует");
+  }
   return User.findByIdAndUpdate(_id, newUserData, {
     new: true,
     runValidators: true,
